@@ -23,6 +23,7 @@ public class Person_infoController {
         model.addAttribute("person_info",person_infoService.findAll());
         return "show";
     }
+
     // 根据编号查询
     @RequestMapping("findById")
     public String findByid(Model model,Integer person_id){
@@ -36,6 +37,7 @@ public class Person_infoController {
         person_infoService.doUpd(person_info);
         return "redirect:findAll";
     }
+
     // 添加显示
     @RequestMapping("addShow")
     public String addShow(Model model){
