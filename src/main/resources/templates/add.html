@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/person_Info/add">
+    <table  border="1" align="center">
+        <caption>"安居"户籍管理系统</caption>
+        <tr>
+            <td>
+                人员编号
+            </td>
+            <td>
+                <input name="person_id" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                人员姓名
+            </td>
+            <td>
+                <input name="person_name" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                户口所在地
+            </td>
+            <td>
+                <select name="person_area_id">
+                    <option th:each="a:${area_info}" th:value="*{a.area_id}"><span th:text="*{a.area_name}"></span></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                人员年龄
+            </td>
+            <td>
+                <input name="person_age" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                家庭地址
+            </td>
+            <td>
+                <input name="person_address" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="提交">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

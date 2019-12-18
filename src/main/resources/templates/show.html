@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" align="center">
+        <caption>"安居"户籍管理系统  <a th:href="@{/person_Info/addShow}">添加</a></caption>
+        <tr>
+            <th>人员编号</th>
+            <th>人员姓名</th>
+            <th>户口所在地</th>
+            <th>人员年龄</th>
+            <th>家庭住址</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="p:${person_info}">
+            <td th:text="*{p.person_id}"></td>
+            <td th:text="*{p.person_name}"></td>
+            <td th:text="*{p.area_name}"></td>
+            <td th:text="*{p.person_age}"></td>
+            <td th:text="*{p.person_address}"></td>
+            <td>
+                <a th:href="@{/person_Info/findById(person_id=${p.person_id})}">修改</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
